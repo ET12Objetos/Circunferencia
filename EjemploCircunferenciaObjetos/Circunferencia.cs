@@ -1,29 +1,39 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace EjemploCircunferenciaObjetos
+namespace EjemploCircunferenciaObjetos;
+public class Circunferencia
 {
-    public class Circunferencia
+    //atributo
+    public double Radio2 { get; private set; }
+
+    private double radio;
+
+    public double Radio
     {
-        //atributo
-        public double radio;
-
-        //métodos
-        public Circunferencia(double unRadio)
+        set
         {
-            radio = unRadio;
-        }
-
-        public double CalcularArea()
-        {
-            return Math.PI * radio * radio;
-        }
-
-        public double CalcularPerimetro()
-        {
-            return Math.PI * 2 * radio;
+            if (value <= 0)
+                throw new Exception("Radio invalido");
+            radio = value;
         }
     }
+
+    //RECOMENDADO !!
+    public void SetRadio(double unRadio)
+    {
+        if (unRadio <= 0)
+            throw new Exception("Radio invalido");
+        radio = unRadio;
+    }
+
+    //métodos
+    public Circunferencia(double unRadio)
+    {
+        //SetRadio(unRadio);
+
+        this.Radio = unRadio;
+    }
+
+
+    public double CalcularArea() => Math.PI * radio * radio;
+
+    public double CalcularPerimetro() => Math.PI * 2 * radio;
 }
