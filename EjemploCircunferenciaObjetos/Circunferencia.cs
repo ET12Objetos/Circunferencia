@@ -14,6 +14,10 @@ public class Circunferencia
                 throw new Exception("Radio invalido");
             radio = value;
         }
+        get
+        {
+            return radio;
+        }
     }
 
     //RECOMENDADO !!
@@ -24,12 +28,21 @@ public class Circunferencia
         radio = unRadio;
     }
 
+    //forma clasica
+    // public double GetRadio()
+    // {
+    //     return radio;
+    // }
+
+    //forma nueva
+    public double GetRadio() => radio;
+
     //métodos
     public Circunferencia(double unRadio)
     {
-        //SetRadio(unRadio);
+        SetRadio(unRadio);
 
-        this.Radio = unRadio;
+        //this.Radio = unRadio;
     }
 
 
